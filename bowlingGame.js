@@ -52,7 +52,7 @@ const getScore = (rolls) => {
 };
 
 const bestScore = (games) => {
-  return;
+  return games.reduce((acc, currGame) => Math.max(getScore(currGame), acc), 0);
 };
 
 getScore([6, 4, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
