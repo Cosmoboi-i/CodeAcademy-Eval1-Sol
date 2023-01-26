@@ -16,7 +16,6 @@ const getScore = (rolls) => {
         // strike
         if (rolls.length <= i + 2) throw Error('Invalid number of frames');
         score += currRoll + rolls[i + 1] + rolls[i + 2];
-        console.log(score);
         frameCounter++;
       }
       else {
@@ -35,16 +34,13 @@ const getScore = (rolls) => {
         // open
         score += currRoll + firstRoll;
       }
-      console.log(score);
       frameCounter++;
       isNewFrame = true;
     }
-    console.log('frames: ', frameCounter);
     if (frameCounter === FRAMES) break;
   }
 
   if (frameCounter !== FRAMES){
-    console.log(frameCounter, FRAMES);
     throw Error('Invalid number of frames');
   }
 
@@ -54,8 +50,6 @@ const getScore = (rolls) => {
 const bestScore = (games) => {
   return games.reduce((acc, currGame) => Math.max(getScore(currGame), acc), 0);
 };
-
-getScore([6, 4, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
 module.exports = {getScore, bestScore};
 
