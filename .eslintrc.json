@@ -11,6 +11,7 @@
     "ecmaVersion": "latest"
   },
   "rules": {
+    "no-unused-vars": "warn",
     "array-bracket-spacing": "warn",
     "object-curly-spacing": "warn",
     "indent": [
